@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+FlatUI.h"
+#import "SIXMainController.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +18,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SIXMainController alloc] init]];
+    [self.window makeKeyAndVisible];
+    
+    [self configUI];
     return YES;
+}
+
+- (void)configUI {
+//    [naviBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+//    naviBar.shadowImage = [UIImage new];
+    [UINavigationBar appearance].hidden = YES;
+
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
+    [[UITableView appearance] setSeparatorColor:[UIColor colorFromHexCode:@"9c896f"]];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults objectForKey:@"app背景图片"]) {
+        [defaults setObject:@"bg4" forKey:@"app背景图片"];
+    }
+
+//    [UITableViewCell appearance].textLabel.textColor = [UIColor colorOfWordColor];
+    
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:BACKGROUDIMAGENAME]];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

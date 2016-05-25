@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  SIXLifeController.h
 //  SIXPoetryFate
 //
-//  Created by tarena on 16/5/18.
+//  Created by 六 on 16/5/24.
 //  Copyright © 2016年 six. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SIXLifeController : UIViewController
 
 @end
-
