@@ -38,10 +38,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if (![defaults objectForKey:@"app背景图片"]) {
-        [defaults setObject:@"bg4" forKey:@"app背景图片"];
+        [defaults setObject:@"bg2" forKey:@"app背景图片"];
     }
-
-//    [UITableViewCell appearance].textLabel.textColor = [UIColor colorOfWordColor];
+    if (![defaults objectForKey:@"poetry背景图片"]) {
+        [defaults setObject:@"bg13" forKey:@"poetry背景图片"];
+    }
     
     self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:BACKGROUDIMAGENAME]];
 

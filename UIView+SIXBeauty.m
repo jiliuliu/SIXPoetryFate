@@ -15,6 +15,7 @@
     self.layer.cornerRadius = self.bounds.size.width*0.5;
 //    self.layer.borderWidth = 2;
 //    self.layer.borderColor = [UIColor greenColor].CGColor;
+
 }
 
 - (void)becomeRoundRectangle {

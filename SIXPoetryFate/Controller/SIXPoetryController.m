@@ -8,6 +8,7 @@
 
 #import "SIXPoetryController.h"
 #import "FMDBManager.h"
+#import "UIViewController+SIXGesture.h"
 
 @interface SIXPoetryController () <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, UIScrollViewDelegate>
 
@@ -45,7 +46,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
+    self.myView.bgImageView.image = [UIImage imageNamed:[[NSUserDefaults standardUserDefaults] objectForKey:@"poetry背景图片"]];
 
     //添加键盘开启  关闭的 观察
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openKeyboard:) name:UIKeyboardWillShowNotification object:nil];
@@ -89,19 +90,9 @@
     self.myView.textView.textColor = [UIColor colorOfWordColor];
     self.myView.textView.font = MYFONT ? [UIFont fontWithName:MYFONT size:20] : [UIFont systemFontOfSize:20];
     
-    UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
-    [topView setBarStyle:UIBarStyleBlack];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:topView.bounds];
-    imageView.image = [UIImage imageNamed:@"向下"];
-    [topView addSubview:imageView];
-    self.myView.textView.inputAccessoryView = topView;
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
-    [topView addGestureRecognizer:tapGesture];
+    self.myView.textView.inputAccessoryView = [self addSIXToolbar];
 }
-- (void)closeKeyboard {
-    [self.myView.textView resignFirstResponder];
-}
+
 
 #pragma mark - 键盘监听事件
 - (void)openKeyboard:(NSNotification *)notification {
@@ -223,18 +214,16 @@
 
 #pragma mark - UITextViewDelegate
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    NSLog(@"将要开始编辑？");
-    [self.myView.textView viewWithTag:100].hidden = YES;
+    [self.myView.textView viewWithTag:placeholderLabelTag].hidden = YES;
     return YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView{
-    NSLog(@"结束编辑。");
     //模仿UTextField的placeholder属性
     if (self.myView.textView.text.length == 0) {
-        [self.myView.textView viewWithTag:100].hidden = NO;
+        [self.myView.textView viewWithTag:placeholderLabelTag].hidden = NO;
     }else{
-        [self.myView.textView viewWithTag:100].hidden = YES;
+        [self.myView.textView viewWithTag:placeholderLabelTag].hidden = YES;
     }
     
     //保存评论

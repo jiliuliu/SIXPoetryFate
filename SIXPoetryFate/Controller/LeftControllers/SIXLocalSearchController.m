@@ -28,6 +28,10 @@
 }
 
 - (void)hideKeyboard {
+    if (self.myView.searchBar.text.length == 0) {
+        return ;
+    }
+    [self.myView.activityIndicatorView startAnimating];
     [self.myModel loadLocalModelsWithKeyword:self.myView.searchBar.text withBlock:^{
         [self.myView.tableView reloadData];
     }];
@@ -45,9 +49,13 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [searchBar resignFirstResponder];
-    [self.myModel loadLocalModelsWithKeyword:self.myView.searchBar.text withBlock:^{
-        [self.myView.tableView reloadData];
-    }];
+//    if (searchBar.text.length == 0) {
+//        return ;
+//    }
+//    [self.myView.activityIndicatorView startAnimating];
+//    [self.myModel loadLocalModelsWithKeyword:self.myView.searchBar.text withBlock:^{
+//        [self.myView.tableView reloadData];
+//    }];
 }
 
 

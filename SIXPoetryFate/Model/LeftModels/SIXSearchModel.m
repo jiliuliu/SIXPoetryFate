@@ -30,7 +30,6 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [manager GET:url parameters:paramenters success:^(NSURLSessionDataTask *task, id responseObject) {
             if (![responseObject[@"reason"] isEqualToString:@"Succes"]) {
-                NSLog(@"输入有误");
                 return ;
             }
             NSArray *arr = responseObject[@"result"];

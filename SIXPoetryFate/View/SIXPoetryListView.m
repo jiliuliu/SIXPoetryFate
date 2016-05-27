@@ -12,7 +12,7 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, WIDTH, HEIGHT-64-40) style:UITableViewStylePlain];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, WIDTH, HEIGHT-40-40) style:UITableViewStylePlain];
         tableView.backgroundColor = [UIColor clearColor];
         [self addSubview:tableView];
         _tableView = tableView;

@@ -12,5 +12,6 @@
 
 @property (nonatomic, weak) UISearchBar *searchBar;
 @property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) UIActivityIndicatorView *activityIndicatorView;
 
 @end

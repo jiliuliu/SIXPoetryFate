@@ -8,6 +8,7 @@
 
 #import "SIXSearchPoetryController.h"
 #import "SIXPoetryController.h"
+#import "UIViewController+SIXGesture.h"
 
 
 @interface SIXSearchPoetryController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
@@ -30,6 +31,17 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.view = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -47,40 +59,30 @@
     self.myView.tableView.dataSource = self;
     self.myView.searchBar.delegate = self;
     
-    UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
-    [topView setBarStyle:UIBarStyleBlack];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:topView.bounds];
-    imageView.image = [UIImage imageNamed:@"向下"];
-    [topView addSubview:imageView];
-    self.myView.searchBar.inputAccessoryView = topView;
-    
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
-    [topView addGestureRecognizer:tapGesture];
-    
     [self.myView.searchBar becomeFirstResponder];
     
-    UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeGestureAction)];
-    gesture.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.myView addGestureRecognizer:gesture];
-}
-- (void)closeKeyboard {
-    [self.myView.searchBar resignFirstResponder];
-}
-- (void)SwipeGestureAction {
-    [self.navigationController popViewControllerAnimated:YES];
+    self.myView.searchBar.inputAccessoryView = [self addSIXToolbar];
+    
+    [self addSwipeGestureToPopController];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.myModel.models.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
     cell.textLabel.text = self.myModel.models[indexPath.row].poemTitle;
     cell.textLabel.textColor = [UIColor colorOfWordColor];
     cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:18] : [UIFont systemFontOfSize:18];
+    
+    if (self.myView.activityIndicatorView.isAnimating) {
+        [self.myView.activityIndicatorView stopAnimating];
+    }
     return cell;
 }
 
@@ -91,6 +93,10 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length == 0) {
+        return ;
+    }
+    [self.myView.activityIndicatorView startAnimating];
     [self.myModel loadModelsWithKeyword:searchText withBlock:^{
         [self.myView.tableView reloadData];
     }];

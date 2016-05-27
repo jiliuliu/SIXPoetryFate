@@ -63,15 +63,18 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.myModel.datas[indexPath.row] forKey:@"app背景图片"];
     
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"设置成功" message:@"是否返回主页" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *leftAction = [UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"设置成功" message:@"选择" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *leftAction = [UIAlertAction actionWithTitle:@"阅读页背景" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.myModel.datas[indexPath.row] forKey:@"poetry背景图片"];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }];
-    UIAlertAction *rightAction = [UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    UIAlertAction *rightAction = [UIAlertAction actionWithTitle:@"应用背景" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.myModel.datas[indexPath.row] forKey:@"app背景图片"];
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertC addAction:leftAction];
     [alertC addAction:rightAction];
@@ -83,17 +86,7 @@
     CGFloat width = ([UIScreen mainScreen].bounds.size.width-20)/3;
     return CGSizeMake(width, width*HEIGHT/WIDTH);
 }
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(100, 0, 0, 0);
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

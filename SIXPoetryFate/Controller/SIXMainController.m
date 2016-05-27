@@ -12,6 +12,7 @@
 #import "SIXMainModel.h"
 #import "SIXPoetryListController.h"
 #import "UIView+SIXBeauty.h"
+#import "UIImageView+SIXAnimation.h"
 
 
 @interface SIXMainController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -46,6 +47,12 @@
     self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.view = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -55,6 +62,8 @@
     self.myView.collectionView.dataSource = self;
     self.myView.collectionView.delegate = self;
     
+    [self.myView.bgImageView addLeavesOffluttering];
+    [self.myView.bgImageView animationRipplingImageView];
 
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeGestureAction)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight|UISwipeGestureRecognizerDirectionLeft;

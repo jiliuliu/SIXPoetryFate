@@ -19,7 +19,7 @@
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Poetry.bundle" ofType:nil];
         NSString *documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-        NSString *sourceDBPath = [bundlePath stringByAppendingPathComponent:@"sqlite.db"];
+        NSString *sourceDBPath = [bundlePath stringByAppendingPathComponent:@"sqlite1.db"];
         NSString *targetDBPath = [documentsPath stringByAppendingPathComponent:@"poetryfate.db"];
         
         if (![fileManager fileExistsAtPath:targetDBPath]) {

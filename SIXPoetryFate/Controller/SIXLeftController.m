@@ -14,6 +14,8 @@
 #import "SIXLocalSearchController.h"
 #import "SIXForumController.h"
 #import "SIXAPPStyleController.h"
+#import "SIXLifeController.h"
+#import "UIImageView+SIXAnimation.h"
 
 @interface SIXLeftController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -51,6 +53,12 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.view = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,6 +68,9 @@
 - (void)configMyView {
     self.myView.collectionView.dataSource = self;
     self.myView.collectionView.delegate = self;
+    
+    [self.myView.bgImageView addLeavesOffluttering];
+    [self.myView.bgImageView animationRipplingImageView];
 
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeGestureAction)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight|UISwipeGestureRecognizerDirectionLeft;
@@ -67,7 +78,7 @@
 }
 
 - (void)SwipeGestureAction {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -103,13 +114,13 @@
         }
             break;
         case 2:{
-            SIXSearchPoetryController *searchC = [SIXSearchPoetryController new];
-            [self.navigationController pushViewController:searchC animated:YES];
+            SIXLifeController *lifeC = [SIXLifeController new];
+            [self.navigationController pushViewController:lifeC animated:YES];
         }
             break;
         case 3:{
-            SIXSearchPoetryController *searchC = [SIXSearchPoetryController new];
-            [self.navigationController pushViewController:searchC animated:YES];
+            SIXLifeController *lifeC = [SIXLifeController new];
+            [self.navigationController pushViewController:lifeC animated:YES];
         }
             break;
         case 4:{
@@ -129,9 +140,11 @@
     CGFloat width = ([UIScreen mainScreen].bounds.size.width-30)/2;
     return CGSizeMake(width, width);
 }
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-//    return UIEdgeInsetsMake(0, 0, 0, 0);
-//}
+
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(70, 0, 0, 0);
+}
 
 /*
 #pragma mark - Navigation

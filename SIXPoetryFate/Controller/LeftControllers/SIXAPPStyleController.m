@@ -37,6 +37,12 @@
     self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    self.view = nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -59,7 +65,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:25] : [UIFont systemFontOfSize:25];
+    cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:30] : [UIFont systemFontOfSize:30];
     cell.textLabel.textColor = [UIColor colorOfWordColor];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     if (indexPath.row == 0) {

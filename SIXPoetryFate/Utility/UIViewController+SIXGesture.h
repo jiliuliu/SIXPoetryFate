@@ -12,4 +12,6 @@
 
 - (void)addSwipeGestureToPopController;
 
+- (UIToolbar *)addSIXToolbar;
+
 @end

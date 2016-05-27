@@ -10,14 +10,6 @@
 
 @implementation SIXBaseView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
 
 - (UIImageView *)bgImageView {
     if (!_bgImageView) {

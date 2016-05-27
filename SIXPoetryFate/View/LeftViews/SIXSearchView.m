@@ -32,6 +32,16 @@
     return _tableView;
 }
 
+- (UIActivityIndicatorView *)activityIndicatorView {
+    if (!_activityIndicatorView) {
+        UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activityIndicatorView.center = self.center;
+        [self addSubview:activityIndicatorView];
+        _activityIndicatorView = activityIndicatorView;
+    }
+    return _activityIndicatorView;
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

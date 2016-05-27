@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _datas = @[@"bg0", @"bg1", @"bg2", @"bg3", @"bg4", @"bg5"];
+        _datas = @[@"bg0", @"bg1", @"bg2", @"bg3", @"bg4", @"bg5", @"bg6", @"bg7", @"bg8", @"bg9", @"bg10", @"bg11", @"bg12", @"bg13", @"bg14"];
     }
     return self;
 }
