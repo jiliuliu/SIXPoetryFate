@@ -23,9 +23,7 @@
 		5A8A0E5E1CF57E1600B6660B /* SIXFontModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8A0E5D1CF57E1600B6660B /* SIXFontModel.m */; };
 		5A9F5E801CEE9DF500E059BA /* SIXBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E7F1CEE9DF500E059BA /* SIXBaseView.m */; };
 		5A9F5E831CEEC4C400E059BA /* SIXLeftController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E821CEEC4C400E059BA /* SIXLeftController.m */; };
-		5A9F5E891CEEE7D800E059BA /* SIXLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E881CEEE7D800E059BA /* SIXLeftView.m */; };
 		5A9F5E8C1CEEF1EE00E059BA /* SIXLeftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E8B1CEEF1EE00E059BA /* SIXLeftModel.m */; };
-		5A9F5E921CEF033E00E059BA /* UIView+SIXBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E911CEF033E00E059BA /* UIView+SIXBeauty.m */; };
 		5A9F5E981CEF0A4A00E059BA /* SIXPoetryListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E971CEF0A4A00E059BA /* SIXPoetryListController.m */; };
 		5A9F5E9B1CEF0AA600E059BA /* SIXPoetryListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E9A1CEF0AA600E059BA /* SIXPoetryListView.m */; };
 		5A9F5E9E1CEF0B7200E059BA /* SIXPoetryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A9F5E9D1CEF0B7200E059BA /* SIXPoetryListModel.m */; };
@@ -101,6 +99,8 @@
 		85ECF4BD1CEC808D00DB76A7 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85ECF4A21CEC808D00DB76A7 /* Lato-Light.ttf */; };
 		85ECF4BE1CEC808D00DB76A7 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85ECF4A31CEC808D00DB76A7 /* Lato-Regular.ttf */; };
 		85ECF4C41CEC879700DB76A7 /* SIXMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85ECF4C31CEC879700DB76A7 /* SIXMainView.m */; };
+		EAA7F25A1F32B3DE00BA7780 /* SIXLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7F2581F32B3DE00BA7780 /* SIXLeftView.m */; };
+		EAA7F25D1F32B40300BA7780 /* UIView+SIXBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA7F25B1F32B40300BA7780 /* UIView+SIXBeauty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,12 +134,8 @@
 		5A9F5E7F1CEE9DF500E059BA /* SIXBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXBaseView.m; sourceTree = "<group>"; };
 		5A9F5E811CEEC4C400E059BA /* SIXLeftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLeftController.h; sourceTree = "<group>"; };
 		5A9F5E821CEEC4C400E059BA /* SIXLeftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXLeftController.m; sourceTree = "<group>"; };
-		5A9F5E871CEEE7D800E059BA /* SIXLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SIXLeftView.h; path = ../../SIXLeftView.h; sourceTree = "<group>"; };
-		5A9F5E881CEEE7D800E059BA /* SIXLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SIXLeftView.m; path = ../../SIXLeftView.m; sourceTree = "<group>"; };
 		5A9F5E8A1CEEF1EE00E059BA /* SIXLeftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLeftModel.h; sourceTree = "<group>"; };
 		5A9F5E8B1CEEF1EE00E059BA /* SIXLeftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXLeftModel.m; sourceTree = "<group>"; };
-		5A9F5E901CEF033E00E059BA /* UIView+SIXBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SIXBeauty.h"; path = "../../UIView+SIXBeauty.h"; sourceTree = "<group>"; };
-		5A9F5E911CEF033E00E059BA /* UIView+SIXBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SIXBeauty.m"; path = "../../UIView+SIXBeauty.m"; sourceTree = "<group>"; };
 		5A9F5E961CEF0A4A00E059BA /* SIXPoetryListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXPoetryListController.h; sourceTree = "<group>"; };
 		5A9F5E971CEF0A4A00E059BA /* SIXPoetryListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXPoetryListController.m; sourceTree = "<group>"; };
 		5A9F5E991CEF0AA600E059BA /* SIXPoetryListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXPoetryListView.h; sourceTree = "<group>"; };
@@ -284,6 +280,10 @@
 		85ECF4A31CEC808D00DB76A7 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		85ECF4C21CEC879700DB76A7 /* SIXMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXMainView.h; sourceTree = "<group>"; };
 		85ECF4C31CEC879700DB76A7 /* SIXMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXMainView.m; sourceTree = "<group>"; };
+		EAA7F2581F32B3DE00BA7780 /* SIXLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXLeftView.m; sourceTree = "<group>"; };
+		EAA7F2591F32B3DE00BA7780 /* SIXLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLeftView.h; sourceTree = "<group>"; };
+		EAA7F25B1F32B40300BA7780 /* UIView+SIXBeauty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SIXBeauty.m"; sourceTree = "<group>"; };
+		EAA7F25C1F32B40300BA7780 /* UIView+SIXBeauty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SIXBeauty.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,8 +507,8 @@
 			children = (
 				85ECF4341CEC6A7A00DB76A7 /* FMDBManager.h */,
 				85ECF4351CEC6A7A00DB76A7 /* FMDBManager.m */,
-				5A9F5E901CEF033E00E059BA /* UIView+SIXBeauty.h */,
-				5A9F5E911CEF033E00E059BA /* UIView+SIXBeauty.m */,
+				EAA7F25B1F32B40300BA7780 /* UIView+SIXBeauty.m */,
+				EAA7F25C1F32B40300BA7780 /* UIView+SIXBeauty.h */,
 				5AC1D8771CF4775D0076B706 /* UIViewController+SIXGesture.h */,
 				5AC1D8781CF4775D0076B706 /* UIViewController+SIXGesture.m */,
 				5A64E5161CF55B99003E8E38 /* UIColor+SIXWordColor.h */,
@@ -522,12 +522,12 @@
 		85ECF4271CEC4B2F00DB76A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EAA7F2581F32B3DE00BA7780 /* SIXLeftView.m */,
+				EAA7F2591F32B3DE00BA7780 /* SIXLeftView.h */,
 				5A9F5E7E1CEE9DF500E059BA /* SIXBaseView.h */,
 				5A9F5E7F1CEE9DF500E059BA /* SIXBaseView.m */,
 				85ECF4C21CEC879700DB76A7 /* SIXMainView.h */,
 				85ECF4C31CEC879700DB76A7 /* SIXMainView.m */,
-				5A9F5E871CEEE7D800E059BA /* SIXLeftView.h */,
-				5A9F5E881CEEE7D800E059BA /* SIXLeftView.m */,
 				5A9F5E991CEF0AA600E059BA /* SIXPoetryListView.h */,
 				5A9F5E9A1CEF0AA600E059BA /* SIXPoetryListView.m */,
 				5AD9CB1D1CF2DB86007408FA /* SIXPoetryView.h */,
@@ -770,6 +770,7 @@
 				85ECF4A91CEC808D00DB76A7 /* FUISwitch.m in Sources */,
 				5AC1D8671CF475730076B706 /* SIXWordColorController.m in Sources */,
 				5A1D16E71CF97E3D00550D0D /* SIXSongListModel.m in Sources */,
+				EAA7F25D1F32B40300BA7780 /* UIView+SIXBeauty.m in Sources */,
 				85ECF4AE1CEC808D00DB76A7 /* UIFont+FlatUI.m in Sources */,
 				85ECF4601CEC6B3700DB76A7 /* AFSecurityPolicy.m in Sources */,
 				85ECF4A61CEC808D00DB76A7 /* FUICellBackgroundView.m in Sources */,
@@ -779,16 +780,15 @@
 				5AC1D8791CF4775D0076B706 /* UIViewController+SIXGesture.m in Sources */,
 				5AC1D86D1CF475C30076B706 /* SIXFontView.m in Sources */,
 				85ECF4A51CEC808D00DB76A7 /* FUIButton.m in Sources */,
-				5A9F5E921CEF033E00E059BA /* UIView+SIXBeauty.m in Sources */,
 				5AC1D85B1CF4621A0076B706 /* SIXAPPStyleController.m in Sources */,
 				85ECF4B61CEC808D00DB76A7 /* UITableViewCell+FlatUI.m in Sources */,
-				5A9F5E891CEEE7D800E059BA /* SIXLeftView.m in Sources */,
 				85ECF4B51CEC808D00DB76A7 /* UITabBar+FlatUI.m in Sources */,
 				5AC1D8611CF474D40076B706 /* SIXSkinController.m in Sources */,
 				5A9F5E8C1CEEF1EE00E059BA /* SIXLeftModel.m in Sources */,
 				85ECF4AA1CEC808D00DB76A7 /* FUITextField.m in Sources */,
 				5A1D16F01CF9829D00550D0D /* SIXSongView.m in Sources */,
 				85ECF40F1CEC4A8100DB76A7 /* AppDelegate.m in Sources */,
+				EAA7F25A1F32B3DE00BA7780 /* SIXLeftView.m in Sources */,
 				5AD9CB2B1CF32EA6007408FA /* SIXSearchModel.m in Sources */,
 				85ECF4A41CEC808D00DB76A7 /* FUIAlertView.m in Sources */,
 				85ECF4B41CEC808D00DB76A7 /* UIStepper+FlatUI.m in Sources */,
