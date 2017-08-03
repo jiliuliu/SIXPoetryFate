@@ -5,13 +5,13 @@
 <h3>APP展示</h3>
 
 <div>
-<img src="./images/home_right.png"></img>
+<img src="./images/home_right.png" width=200></img>
 </div>
 
 <div>
-<img src="./images/home_left.png"></img>
+<img src="./images/home_left.png" width=200></img>
 </div>
 
 <div>
-<img src="./images/poetry.png"></img>
+<img src="./images/poetry.png" width=200></img>
 </div>
