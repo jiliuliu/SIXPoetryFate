@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  SIXMyWordsController.h
 //  SIXPoetryFate
 //
-//  Created by tarena on 16/5/18.
+//  Created by liu on 16/5/28.
 //  Copyright © 2016年 six. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SIXMyWordsController : UIViewController
 
 @end
-
