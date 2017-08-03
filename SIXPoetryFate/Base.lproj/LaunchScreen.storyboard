@@ -16,8 +16,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg7" translatesAutoresizingMaskIntoConstraints="NO" id="cCJ-FI-pJS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cCJ-FI-pJS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="7dR-2i-De6"/>
+                            <constraint firstItem="cCJ-FI-pJS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="P1z-yP-0dK"/>
+                            <constraint firstAttribute="trailing" secondItem="cCJ-FI-pJS" secondAttribute="trailing" id="SbG-MB-hmz"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cCJ-FI-pJS" secondAttribute="bottom" id="cv4-Cx-Ir8"/>
+                            <constraint firstItem="cCJ-FI-pJS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gT0-dW-dub"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7dR-2i-De6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,4 +43,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg7" width="325" height="578"/>
+    </resources>
 </document>

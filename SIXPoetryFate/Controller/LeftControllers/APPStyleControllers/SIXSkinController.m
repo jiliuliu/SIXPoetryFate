@@ -64,8 +64,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"设置成功" message:@"选择" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *leftAction = [UIAlertAction actionWithTitle:@"阅读页背景" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"设置" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *leftAction = [UIAlertAction actionWithTitle:@"阅读页背景" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:self.myModel.datas[indexPath.row] forKey:@"poetry背景图片"];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -76,8 +76,13 @@
         [defaults setObject:self.myModel.datas[indexPath.row] forKey:@"app背景图片"];
         [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     }];
+    
+    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    
     [alertC addAction:leftAction];
     [alertC addAction:rightAction];
+    [alertC addAction:cancleAction];
     
     [self presentViewController:alertC animated:YES completion:nil];
 }
@@ -86,7 +91,6 @@
     CGFloat width = ([UIScreen mainScreen].bounds.size.width-20)/3;
     return CGSizeMake(width, width*HEIGHT/WIDTH);
 }
-
 
 
 @end

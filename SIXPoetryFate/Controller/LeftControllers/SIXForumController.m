@@ -8,7 +8,7 @@
 
 #import "SIXForumController.h"
 
-static  NSString *tiebaKey = @"http://tieba.baidu.com/f?kw=%E5%8F%A4%E8%AF%97%E8%AF%8D&ie=utf-8";
+static  NSString *tiebaKey = @"http://bbs.guqu.net";
 
 @interface SIXForumController ()
 

@@ -51,10 +51,10 @@
     [super viewWillDisappear:animated];
     
     NSDictionary *wordColor = @{@"red":@(self.myView.redSlider.value),
-                                                        @"blue":@(self.myView.blueSlider.value),
-                                                        @"green":@(self.myView.greenSlider.value),
-                                                        @"alpha":@(self.myView.alphaSlider.value),
-                                                    };
+                                @"blue":@(self.myView.blueSlider.value),
+                                @"green":@(self.myView.greenSlider.value),
+                                @"alpha":@(self.myView.alphaSlider.value)
+                              };
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:wordColor forKey:@"wordColor"];

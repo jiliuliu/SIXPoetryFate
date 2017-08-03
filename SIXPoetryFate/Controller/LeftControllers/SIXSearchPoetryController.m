@@ -59,8 +59,6 @@
     self.myView.tableView.dataSource = self;
     self.myView.searchBar.delegate = self;
     
-    [self.myView.searchBar becomeFirstResponder];
-    
     self.myView.searchBar.inputAccessoryView = [self addSIXToolbar];
     
     [self addSwipeGestureToPopController];
@@ -88,7 +86,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     SIXPoetryController *poetryC = [[SIXPoetryController alloc] initWithSourModel:NETDATAMODEL];
-    [poetryC.myModel loadModelWithPoemID:self.myModel.models[indexPath.row].poemID ];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [poetryC.myModel loadModelWithPoemID:self.myModel.models[indexPath.row].poemID ];
+    });
     [self.navigationController pushViewController:poetryC animated:YES];
 }
 
@@ -97,9 +97,13 @@
         return ;
     }
     [self.myView.activityIndicatorView startAnimating];
-    [self.myModel loadModelsWithKeyword:searchText withBlock:^{
-        [self.myView.tableView reloadData];
-    }];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.myModel loadModelsWithKeyword:searchText withBlock:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.myView.tableView reloadData];
+            });
+        }];
+    });
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

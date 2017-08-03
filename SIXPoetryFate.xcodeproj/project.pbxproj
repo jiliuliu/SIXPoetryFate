@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1D16E11CF97DB700550D0D /* SIXSongListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16E01CF97DB700550D0D /* SIXSongListController.m */; };
+		5A1D16E41CF97DF500550D0D /* SIXSongListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16E31CF97DF500550D0D /* SIXSongListView.m */; };
+		5A1D16E71CF97E3D00550D0D /* SIXSongListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16E61CF97E3D00550D0D /* SIXSongListModel.m */; };
+		5A1D16EA1CF97F3C00550D0D /* SIXSongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16E91CF97F3C00550D0D /* SIXSongModel.m */; };
+		5A1D16ED1CF9825A00550D0D /* SIXSongController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16EC1CF9825A00550D0D /* SIXSongController.m */; };
+		5A1D16F01CF9829D00550D0D /* SIXSongView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16EF1CF9829D00550D0D /* SIXSongView.m */; };
+		5A1D16F21CF98CD800550D0D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A1D16F11CF98CD800550D0D /* AVFoundation.framework */; };
+		5A1D16F51CF9918B00550D0D /* SIXMyWordsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1D16F41CF9918B00550D0D /* SIXMyWordsController.m */; };
 		5A55EB4B1CF7E14700DCACAB /* SIXLifeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A55EB4A1CF7E14700DCACAB /* SIXLifeModel.m */; };
 		5A55EB4E1CF7E5E800DCACAB /* SIXLifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A55EB4D1CF7E5E800DCACAB /* SIXLifeView.m */; };
 		5A55EB501CF8660100DCACAB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A55EB4F1CF8660100DCACAB /* QuartzCore.framework */; };
@@ -34,7 +42,6 @@
 		5AC1D86D1CF475C30076B706 /* SIXFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D86C1CF475C30076B706 /* SIXFontView.m */; };
 		5AC1D8701CF475CE0076B706 /* SIXWordColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D86F1CF475CE0076B706 /* SIXWordColorView.m */; };
 		5AC1D8731CF4761E0076B706 /* SIXLifeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D8721CF4761E0076B706 /* SIXLifeController.m */; };
-		5AC1D8761CF476560076B706 /* SIXSongListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D8751CF476560076B706 /* SIXSongListController.m */; };
 		5AC1D8791CF4775D0076B706 /* UIViewController+SIXGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D8781CF4775D0076B706 /* UIViewController+SIXGesture.m */; };
 		5AC1D87C1CF481CB0076B706 /* SIXSkinModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC1D87B1CF481CB0076B706 /* SIXSkinModel.m */; };
 		5AD9CB1C1CF2D993007408FA /* SIXPoetryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9CB1B1CF2D993007408FA /* SIXPoetryController.m */; };
@@ -97,6 +104,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A1D16DF1CF97DB700550D0D /* SIXSongListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongListController.h; sourceTree = "<group>"; };
+		5A1D16E01CF97DB700550D0D /* SIXSongListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongListController.m; sourceTree = "<group>"; };
+		5A1D16E21CF97DF500550D0D /* SIXSongListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongListView.h; sourceTree = "<group>"; };
+		5A1D16E31CF97DF500550D0D /* SIXSongListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongListView.m; sourceTree = "<group>"; };
+		5A1D16E51CF97E3D00550D0D /* SIXSongListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongListModel.h; sourceTree = "<group>"; };
+		5A1D16E61CF97E3D00550D0D /* SIXSongListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongListModel.m; sourceTree = "<group>"; };
+		5A1D16E81CF97F3C00550D0D /* SIXSongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongModel.h; sourceTree = "<group>"; };
+		5A1D16E91CF97F3C00550D0D /* SIXSongModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongModel.m; sourceTree = "<group>"; };
+		5A1D16EB1CF9825A00550D0D /* SIXSongController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongController.h; sourceTree = "<group>"; };
+		5A1D16EC1CF9825A00550D0D /* SIXSongController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongController.m; sourceTree = "<group>"; };
+		5A1D16EE1CF9829D00550D0D /* SIXSongView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongView.h; sourceTree = "<group>"; };
+		5A1D16EF1CF9829D00550D0D /* SIXSongView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongView.m; sourceTree = "<group>"; };
+		5A1D16F11CF98CD800550D0D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5A1D16F31CF9918B00550D0D /* SIXMyWordsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXMyWordsController.h; sourceTree = "<group>"; };
+		5A1D16F41CF9918B00550D0D /* SIXMyWordsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXMyWordsController.m; sourceTree = "<group>"; };
 		5A55EB491CF7E14700DCACAB /* SIXLifeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLifeModel.h; sourceTree = "<group>"; };
 		5A55EB4A1CF7E14700DCACAB /* SIXLifeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXLifeModel.m; sourceTree = "<group>"; };
 		5A55EB4C1CF7E5E800DCACAB /* SIXLifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLifeView.h; sourceTree = "<group>"; };
@@ -150,8 +172,6 @@
 		5AC1D86F1CF475CE0076B706 /* SIXWordColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXWordColorView.m; sourceTree = "<group>"; };
 		5AC1D8711CF4761E0076B706 /* SIXLifeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXLifeController.h; sourceTree = "<group>"; };
 		5AC1D8721CF4761E0076B706 /* SIXLifeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXLifeController.m; sourceTree = "<group>"; };
-		5AC1D8741CF476560076B706 /* SIXSongListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSongListController.h; sourceTree = "<group>"; };
-		5AC1D8751CF476560076B706 /* SIXSongListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIXSongListController.m; sourceTree = "<group>"; };
 		5AC1D8771CF4775D0076B706 /* UIViewController+SIXGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SIXGesture.h"; sourceTree = "<group>"; };
 		5AC1D8781CF4775D0076B706 /* UIViewController+SIXGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SIXGesture.m"; sourceTree = "<group>"; };
 		5AC1D87A1CF481CB0076B706 /* SIXSkinModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIXSkinModel.h; sourceTree = "<group>"; };
@@ -271,6 +291,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A1D16F21CF98CD800550D0D /* AVFoundation.framework in Frameworks */,
 				5A55EB501CF8660100DCACAB /* QuartzCore.framework in Frameworks */,
 				85ECF46F1CEC7DB100DB76A7 /* libsqlite3.tbd in Frameworks */,
 			);
@@ -288,6 +309,8 @@
 				5AC1D8631CF475490076B706 /* SIXFontController.m */,
 				5AC1D8651CF475730076B706 /* SIXWordColorController.h */,
 				5AC1D8661CF475730076B706 /* SIXWordColorController.m */,
+				5A1D16F31CF9918B00550D0D /* SIXMyWordsController.h */,
+				5A1D16F41CF9918B00550D0D /* SIXMyWordsController.m */,
 			);
 			path = APPStyleControllers;
 			sourceTree = "<group>";
@@ -325,8 +348,10 @@
 				5AC1D84E1CF422B10076B706 /* SIXLocalSearchController.m */,
 				5AC1D8711CF4761E0076B706 /* SIXLifeController.h */,
 				5AC1D8721CF4761E0076B706 /* SIXLifeController.m */,
-				5AC1D8741CF476560076B706 /* SIXSongListController.h */,
-				5AC1D8751CF476560076B706 /* SIXSongListController.m */,
+				5A1D16DF1CF97DB700550D0D /* SIXSongListController.h */,
+				5A1D16E01CF97DB700550D0D /* SIXSongListController.m */,
+				5A1D16EB1CF9825A00550D0D /* SIXSongController.h */,
+				5A1D16EC1CF9825A00550D0D /* SIXSongController.m */,
 				5AC1D8501CF45F220076B706 /* SIXForumController.h */,
 				5AC1D8511CF45F220076B706 /* SIXForumController.m */,
 				5AC1D8591CF4621A0076B706 /* SIXAPPStyleController.h */,
@@ -343,6 +368,10 @@
 				5AD9CB271CF32CCA007408FA /* SIXSearchView.m */,
 				5A55EB4C1CF7E5E800DCACAB /* SIXLifeView.h */,
 				5A55EB4D1CF7E5E800DCACAB /* SIXLifeView.m */,
+				5A1D16E21CF97DF500550D0D /* SIXSongListView.h */,
+				5A1D16E31CF97DF500550D0D /* SIXSongListView.m */,
+				5A1D16EE1CF9829D00550D0D /* SIXSongView.h */,
+				5A1D16EF1CF9829D00550D0D /* SIXSongView.m */,
 				5AC1D8531CF45F990076B706 /* SIXForumView.h */,
 				5AC1D8541CF45F990076B706 /* SIXForumView.m */,
 				5AC1D8561CF462040076B706 /* SIXAPPStyleView.h */,
@@ -359,6 +388,10 @@
 				5AD9CB2A1CF32EA6007408FA /* SIXSearchModel.m */,
 				5A55EB491CF7E14700DCACAB /* SIXLifeModel.h */,
 				5A55EB4A1CF7E14700DCACAB /* SIXLifeModel.m */,
+				5A1D16E51CF97E3D00550D0D /* SIXSongListModel.h */,
+				5A1D16E61CF97E3D00550D0D /* SIXSongListModel.m */,
+				5A1D16E81CF97F3C00550D0D /* SIXSongModel.h */,
+				5A1D16E91CF97F3C00550D0D /* SIXSongModel.m */,
 				5AC1D85E1CF474900076B706 /* APPStyleModels */,
 			);
 			path = LeftModels;
@@ -423,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				85ECF46E1CEC7DB100DB76A7 /* libsqlite3.tbd */,
+				5A1D16F11CF98CD800550D0D /* AVFoundation.framework */,
 				5A55EB4F1CF8660100DCACAB /* QuartzCore.framework */,
 				85ECF4701CEC808D00DB76A7 /* FlatUIKit */,
 				85ECF4481CEC6B3700DB76A7 /* AFNetworking */,
@@ -660,6 +694,7 @@
 				TargetAttributes = {
 					85ECF4061CEC4A8100DB76A7 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = E82T5RLF74;
 					};
 				};
 			};
@@ -709,12 +744,14 @@
 				5AD9CB1F1CF2DB86007408FA /* SIXPoetryView.m in Sources */,
 				5A55EB4B1CF7E14700DCACAB /* SIXLifeModel.m in Sources */,
 				85ECF4C41CEC879700DB76A7 /* SIXMainView.m in Sources */,
+				5A1D16E41CF97DF500550D0D /* SIXSongListView.m in Sources */,
 				5AC1D8701CF475CE0076B706 /* SIXWordColorView.m in Sources */,
 				5AC1D8521CF45F220076B706 /* SIXForumController.m in Sources */,
 				5AED01201CF597BA00E7FA4F /* SIXCollectionViewCell.m in Sources */,
 				5A8A0E5E1CF57E1600B6660B /* SIXFontModel.m in Sources */,
 				5A9F5E9E1CEF0B7200E059BA /* SIXPoetryListModel.m in Sources */,
 				85ECF45C1CEC6B3700DB76A7 /* AFHTTPRequestOperation.m in Sources */,
+				5A1D16ED1CF9825A00550D0D /* SIXSongController.m in Sources */,
 				5AC1D8641CF475490076B706 /* SIXFontController.m in Sources */,
 				5A9F5EA11CEF2C4500E059BA /* SIXPoetryModel.m in Sources */,
 				85ECF4641CEC6B3700DB76A7 /* AFURLSessionManager.m in Sources */,
@@ -732,6 +769,7 @@
 				85ECF4441CEC6B3000DB76A7 /* FMDatabaseAdditions.m in Sources */,
 				85ECF4A91CEC808D00DB76A7 /* FUISwitch.m in Sources */,
 				5AC1D8671CF475730076B706 /* SIXWordColorController.m in Sources */,
+				5A1D16E71CF97E3D00550D0D /* SIXSongListModel.m in Sources */,
 				85ECF4AE1CEC808D00DB76A7 /* UIFont+FlatUI.m in Sources */,
 				85ECF4601CEC6B3700DB76A7 /* AFSecurityPolicy.m in Sources */,
 				85ECF4A61CEC808D00DB76A7 /* FUICellBackgroundView.m in Sources */,
@@ -749,6 +787,7 @@
 				5AC1D8611CF474D40076B706 /* SIXSkinController.m in Sources */,
 				5A9F5E8C1CEEF1EE00E059BA /* SIXLeftModel.m in Sources */,
 				85ECF4AA1CEC808D00DB76A7 /* FUITextField.m in Sources */,
+				5A1D16F01CF9829D00550D0D /* SIXSongView.m in Sources */,
 				85ECF40F1CEC4A8100DB76A7 /* AppDelegate.m in Sources */,
 				5AD9CB2B1CF32EA6007408FA /* SIXSearchModel.m in Sources */,
 				85ECF4A41CEC808D00DB76A7 /* FUIAlertView.m in Sources */,
@@ -764,13 +803,15 @@
 				5A55EB531CF8667C00DCACAB /* UIImageView+SIXAnimation.m in Sources */,
 				5A9F5E801CEE9DF500E059BA /* SIXBaseView.m in Sources */,
 				85ECF4B31CEC808D00DB76A7 /* UISlider+FlatUI.m in Sources */,
-				5AC1D8761CF476560076B706 /* SIXSongListController.m in Sources */,
 				85ECF4B21CEC808D00DB76A7 /* UIProgressView+FlatUI.m in Sources */,
 				85ECF4B01CEC808D00DB76A7 /* UINavigationBar+FlatUI.m in Sources */,
 				85ECF4AF1CEC808D00DB76A7 /* UIImage+FlatUI.m in Sources */,
+				5A1D16E11CF97DB700550D0D /* SIXSongListController.m in Sources */,
 				85ECF4461CEC6B3000DB76A7 /* FMDatabaseQueue.m in Sources */,
+				5A1D16F51CF9918B00550D0D /* SIXMyWordsController.m in Sources */,
 				85ECF45E1CEC6B3700DB76A7 /* AFHTTPSessionManager.m in Sources */,
 				85ECF4671CEC6FF200DB76A7 /* SIXMainModel.m in Sources */,
+				5A1D16EA1CF97F3C00550D0D /* SIXSongModel.m in Sources */,
 				5A64E5181CF55B99003E8E38 /* UIColor+SIXWordColor.m in Sources */,
 				5AD9CB231CF30C60007408FA /* SIXSearchPoetryController.m in Sources */,
 				5A9F5E9B1CEF0AA600E059BA /* SIXPoetryListView.m in Sources */,
@@ -885,7 +926,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/liu/Desktop/SIXPoetryFate/SIXPoetryFate/Other/PrefixHeader.pch;
+				DEVELOPMENT_TEAM = E82T5RLF74;
+				GCC_PREFIX_HEADER = "/$(SRCROOT)/SIXPoetryFate/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = SIXPoetryFate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liujiliu.SIXPoetryFate;
@@ -897,7 +939,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				GCC_PREFIX_HEADER = /Users/liu/Desktop/SIXPoetryFate/SIXPoetryFate/Other/PrefixHeader.pch;
+				DEVELOPMENT_TEAM = E82T5RLF74;
+				GCC_PREFIX_HEADER = "/$(SRCROOT)/SIXPoetryFate/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = SIXPoetryFate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liujiliu.SIXPoetryFate;

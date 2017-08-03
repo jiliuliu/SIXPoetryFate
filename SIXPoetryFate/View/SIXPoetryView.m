@@ -10,15 +10,6 @@
 
 @implementation SIXPoetryView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-    }
-    return self;
-}
-
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
@@ -35,6 +26,7 @@
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 54, WIDTH, HEIGHT-54)];
         tableView.backgroundColor = [UIColor clearColor];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.scrollView addSubview:tableView];
         _tableView = tableView;
     }

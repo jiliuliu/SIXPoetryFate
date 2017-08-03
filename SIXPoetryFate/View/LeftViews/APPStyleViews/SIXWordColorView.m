@@ -49,6 +49,7 @@
         UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 250, WIDTH-100, 30)];
         slider.minimumTrackTintColor = [UIColor blackColor];
         slider.thumbTintColor = [UIColor blackColor];
+        slider.minimumValue = 0.3;
         [self addSubview:slider];
         _alphaSlider = slider;
     }

@@ -20,7 +20,6 @@
 }
 
 
-
 - (UIToolbar *)addSIXToolbar {
     UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
     [topView setBarStyle:UIBarStyleBlack];

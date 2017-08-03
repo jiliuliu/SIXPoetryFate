@@ -28,8 +28,6 @@
 }
 
 - (void)configUI {
-//    [naviBar setBackgroundImage:[UIImage new] forBarMetrics:0];
-//    naviBar.shadowImage = [UIImage new];
     [UINavigationBar appearance].hidden = YES;
 
     [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];

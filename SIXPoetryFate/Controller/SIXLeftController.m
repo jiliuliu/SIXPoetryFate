@@ -15,6 +15,7 @@
 #import "SIXForumController.h"
 #import "SIXAPPStyleController.h"
 #import "SIXLifeController.h"
+#import "SIXSongListController.h"
 #import "UIImageView+SIXAnimation.h"
 
 @interface SIXLeftController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -119,8 +120,8 @@
         }
             break;
         case 3:{
-            SIXLifeController *lifeC = [SIXLifeController new];
-            [self.navigationController pushViewController:lifeC animated:YES];
+            SIXSongListController *songListC = [SIXSongListController new];
+            [self.navigationController pushViewController:songListC animated:YES];
         }
             break;
         case 4:{
@@ -145,6 +146,8 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(70, 0, 0, 0);
 }
+
+
 
 /*
 #pragma mark - Navigation

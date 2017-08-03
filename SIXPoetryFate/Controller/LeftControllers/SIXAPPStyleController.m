@@ -11,6 +11,7 @@
 #import "SIXSkinController.h"
 #import "SIXFontController.h"
 #import "SIXWordColorController.h"
+#import "SIXMyWordsController.h"
 
 @interface SIXAPPStyleController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -57,7 +58,7 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;
@@ -68,14 +69,19 @@
     cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:30] : [UIFont systemFontOfSize:30];
     cell.textLabel.textColor = [UIColor colorOfWordColor];
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"皮肤";
-    }
-    if (indexPath.row == 1) {
-        cell.textLabel.text = @"字体";
-    }
-    if (indexPath.row == 2) {
-        cell.textLabel.text = @"字色";
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"罗裳";
+            break;
+        case 1:
+            cell.textLabel.text = @"倩影";
+            break;
+        case 2:
+            cell.textLabel.text = @"魅丽";
+            break;
+        default:
+            cell.textLabel.text = @"你侬我侬";
+            break;
     }
     return cell;
 }
@@ -92,9 +98,14 @@
             [self.navigationController pushViewController:fontC animated:YES];
         }
             break;
-        default:{
+        case 2:{
             SIXWordColorController *wordColorC = [SIXWordColorController new];
             [self.navigationController pushViewController:wordColorC animated:YES];
+        }
+            break;
+        default:{
+            SIXMyWordsController *myWordsC = [SIXMyWordsController new];
+            [self.navigationController pushViewController:myWordsC animated:YES];
         }
             break;
     }

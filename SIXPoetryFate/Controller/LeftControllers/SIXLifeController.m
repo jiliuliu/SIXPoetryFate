@@ -88,6 +88,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.searchBar.delegate = self;
             cell.searchBar.inputAccessoryView = [self addSIXToolbar];
+//            [cell.searchBar becomeFirstResponder];
         }
         return cell;
     }
@@ -100,7 +101,14 @@
             cell = [SIXLifeViewPoetHeadCell new];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-        cell.poetHead.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.myModel.imageUrl]]];
+        @synchronized(self) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.myModel.imageUrl]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cell.poetHead.image = [UIImage imageWithData:data];
+                });
+            });
+        }
         return cell;
     }
     
@@ -129,8 +137,12 @@
         return;
     }
     [self.myView.activityIndicatorView startAnimating];
-    self.myModel = [self.myModel loadModelWithKeyword:searchBar.text];
-    [self.myView.tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.myModel = [self.myModel loadModelWithKeyword:searchBar.text];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.myView.tableView reloadData];
+        });
+    });
 }
 
 - (void)closeKeyboard {

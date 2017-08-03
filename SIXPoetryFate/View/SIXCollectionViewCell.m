@@ -14,6 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UILabel *label = [[UILabel alloc] initWithFrame:self.bounds];
+        label.shadowOffset = CGSizeMake(5, 5);
         [self addSubview:label];
         _myLabel = label;
     }

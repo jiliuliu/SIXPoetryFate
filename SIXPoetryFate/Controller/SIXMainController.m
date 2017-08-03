@@ -112,9 +112,16 @@
     return CGSizeMake(width, width*160/340);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(100, 0, 0, 0);
+    return UIEdgeInsetsMake(90, 0, 0, 0);
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 17;
 }
 
+
+- (void)dealloc {
+    NSLog(@"main释放");
+}
 /*
 #pragma mark - Navigation
 
