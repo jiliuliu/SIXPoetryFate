@@ -13,7 +13,7 @@
 
 - (UIImageView *)bgImageView {
     if (!_bgImageView) {
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:UIScreen.mainScreen.bounds];
         [self insertSubview:imageView atIndex:0];
         _bgImageView = imageView;
     }

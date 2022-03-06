@@ -10,9 +10,9 @@
 
 @implementation SIXForumView
 
-- (UIWebView *)webView {
+- (WKWebView *)webView {
     if (!_webView) {
-        UIWebView *webView = [[UIWebView alloc] initWithFrame:self.bounds];
+        WKWebView *webView = [[WKWebView alloc] initWithFrame:self.bounds];
         [self addSubview:webView];
         _webView = webView;
     }

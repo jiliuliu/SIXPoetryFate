@@ -36,21 +36,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"诗缘";
     [self configMyView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
+
     [self.myView.collectionView reloadData];
     self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
-    self.view = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,20 +63,21 @@
 - (void)configMyView {
     self.myView.collectionView.dataSource = self;
     self.myView.collectionView.delegate = self;
-    
     [self.myView.bgImageView addLeavesOffluttering];
-    [self.myView.bgImageView animationRipplingImageView];
 
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeGestureAction)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight|UISwipeGestureRecognizerDirectionLeft;
     [self.myView addGestureRecognizer:gesture];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:(UIBarButtonItemStylePlain) target:self action:@selector(SwipeGestureAction)];
 }
 
 - (void)SwipeGestureAction {
     SIXLeftController *leftC = [[SIXLeftController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:leftC];
     leftC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-
-    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:leftC] animated:YES completion:nil];
+    navi.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:navi animated:YES completion:nil];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -112,7 +115,7 @@
     return CGSizeMake(width, width*160/340);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(90, 0, 0, 0);
+    return UIEdgeInsetsMake(38, 0, 0, 0);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return 17;

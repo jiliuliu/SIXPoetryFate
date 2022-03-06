@@ -12,28 +12,11 @@
 
 @implementation UIImageView (SIXAnimation)
 
-- (void)animationRipplingImageView {
-    [self.layer removeAnimationForKey:KAnimationRepeatKey];
-    CATransition *animation = [CATransition animation];
-    animation.duration = 2.0f;
-    animation.timingFunction = UIViewAnimationCurveEaseInOut;
-    animation.type = @"rippleEffect";
-    animation.subtype = kCATransitionFade;
-    animation.delegate = self;
-    [self.layer addAnimation:animation forKey:KAnimationRepeatKey];
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if (flag) {
-        [self performSelector:@selector(animationRipplingImageView) withObject:nil afterDelay:30];
-    }
-}
-
 - (void)addLeavesOffluttering {
     
     // =================== 樱花飘落 ====================
     CAEmitterLayer * snowEmitterLayer = [CAEmitterLayer layer];
-    snowEmitterLayer.emitterPosition = CGPointMake(100, -30);
+    snowEmitterLayer.emitterPosition = CGPointMake(UIScreen.mainScreen.bounds.size.width * 0.5, -30);
     snowEmitterLayer.emitterSize = CGSizeMake(self.bounds.size.width * 2, 0);
     snowEmitterLayer.emitterMode = kCAEmitterLayerOutline;
     snowEmitterLayer.emitterShape = kCAEmitterLayerLine;
@@ -47,7 +30,7 @@
     snowCell.scaleRange = 0.5;
     
     // 每秒产生的花瓣数量
-    snowCell.birthRate = 7;
+    snowCell.birthRate = 20;
     snowCell.lifetime = 80;
     
     // 每秒花瓣变透明的速度

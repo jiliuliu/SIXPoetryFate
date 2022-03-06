@@ -42,7 +42,7 @@
         searchBar.placeholder = @"请输入诗人姓名";
         searchBar.searchBarStyle = UISearchBarStyleMinimal;
         searchBar.tag = searchBarTag;
-        [self addSubview:searchBar];
+        [self.contentView addSubview:searchBar];
         _searchBar = searchBar;
     }
     return self;
@@ -56,7 +56,7 @@
 - (UIImageView *)poetHead {
     if (!_poetHead) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((WIDTH-200)/2, 10, 200, 300)];
-        [self addSubview:imageView];
+        [self.contentView addSubview:imageView];
         _poetHead = imageView;
     }
     return _poetHead;

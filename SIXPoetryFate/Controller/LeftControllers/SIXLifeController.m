@@ -25,7 +25,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self configMyView];
     [self addSwipeGestureToPopController];
 }
@@ -33,7 +32,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.myView.bgImageView.image = [UIImage imageNamed:[[NSUserDefaults standardUserDefaults] objectForKey:@"poetry背景图片"]];
+    self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,12 +132,13 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    if (searchBar.text == 0) {
+    NSString *text = searchBar.text;
+    if (text == 0) {
         return;
     }
     [self.myView.activityIndicatorView startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        self.myModel = [self.myModel loadModelWithKeyword:searchBar.text];
+        self.myModel = [self.myModel loadModelWithKeyword:text];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myView.tableView reloadData];
         });

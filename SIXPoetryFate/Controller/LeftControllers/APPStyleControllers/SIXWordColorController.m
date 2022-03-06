@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"魅丽";
     [self configMyView];
     [self addSwipeGestureToPopController];
 }
@@ -42,7 +42,7 @@
     self.myView.redSlider.value = [dict[@"red"] floatValue];
     self.myView.blueSlider.value = [dict[@"blue"] floatValue];
     self.myView.greenSlider.value = [dict[@"green"] floatValue];
-    self.myView.alphaSlider.value = [dict[@"alpha"] floatValue];
+    self.myView.alphaSlider.value = [dict[@"alpha"] ?: @"1" floatValue];
     
     self.myView.colorPalette.backgroundColor = [UIColor colorOfWordColor];
 }

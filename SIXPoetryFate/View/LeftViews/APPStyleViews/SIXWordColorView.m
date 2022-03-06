@@ -13,7 +13,7 @@
 
 - (UISlider *)redSlider {
     if (!_redSlider) {
-        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 100, WIDTH-100, 30)];
+        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 150, WIDTH-100, 30)];
         slider.minimumTrackTintColor = [UIColor redColor];
         slider.thumbTintColor = [UIColor redColor];
         [self addSubview:slider];
@@ -24,7 +24,7 @@
 
 - (UISlider *)blueSlider {
     if (!_blueSlider) {
-        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 150, WIDTH-100, 30)];
+        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 200, WIDTH-100, 30)];
         slider.minimumTrackTintColor = [UIColor blueColor];
         slider.thumbTintColor = [UIColor blueColor];
         [self addSubview:slider];
@@ -35,7 +35,7 @@
 
 - (UISlider *)greenSlider {
     if (!_greenSlider) {
-        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 200, WIDTH-100, 30)];
+        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 250, WIDTH-100, 30)];
         slider.minimumTrackTintColor = [UIColor greenColor];
         slider.thumbTintColor = [UIColor greenColor];
         [self addSubview:slider];
@@ -46,7 +46,7 @@
 
 - (UISlider *)alphaSlider {
     if (!_alphaSlider) {
-        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 250, WIDTH-100, 30)];
+        UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(50, 300, WIDTH-100, 30)];
         slider.minimumTrackTintColor = [UIColor blackColor];
         slider.thumbTintColor = [UIColor blackColor];
         slider.minimumValue = 0.3;
@@ -58,7 +58,7 @@
 
 - (UIView *)colorPalette {
     if (!_colorPalette) {
-        UIView *colorPalette = [[UIView alloc] initWithFrame:CGRectMake(70, 350, WIDTH-140, WIDTH-140)];
+        UIView *colorPalette = [[UIView alloc] initWithFrame:CGRectMake(70, 400, WIDTH-140, WIDTH-140)];
         [colorPalette becomeCircular];
         [self addSubview:colorPalette];
         _colorPalette = colorPalette;

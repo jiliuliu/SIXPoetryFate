@@ -23,13 +23,10 @@
 - (UIToolbar *)addSIXToolbar {
     UIToolbar *topView = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
     [topView setBarStyle:UIBarStyleBlack];
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:topView.bounds];
-    imageView.image = [UIImage imageNamed:@"向下"];
-    [topView addSubview:imageView];
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
-    [topView addGestureRecognizer:tapGesture];
-    
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:self action:@selector(closeKeyboard)];
+    [topView setItems:@[spaceItem, doneItem] animated:YES];
     return topView;
 }
 - (void)closeKeyboard {

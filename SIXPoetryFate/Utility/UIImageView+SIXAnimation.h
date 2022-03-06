@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImageView (SIXAnimation)
-
-
-- (void)animationRipplingImageView;
-
+@interface UIImageView (SIXAnimation) <CAAnimationDelegate>
 
 - (void)addLeavesOffluttering;
 

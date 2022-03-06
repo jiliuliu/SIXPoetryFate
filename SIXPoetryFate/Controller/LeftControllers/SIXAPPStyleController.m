@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"你侬我侬";
     [self configMyView];
     [self addSwipeGestureToPopController];
 }

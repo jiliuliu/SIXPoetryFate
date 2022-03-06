@@ -23,7 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    self.title = @"列表";
+    
     [self configMyView];
 }
 
@@ -31,7 +32,8 @@
     [super viewWillAppear:animated];
     
     self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
-    
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -55,7 +57,6 @@
 - (void)configMyView {
     self.myView.tableView.delegate = self;
     self.myView.tableView.dataSource = self;
-    
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGestureAction)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.myView addGestureRecognizer:gesture];

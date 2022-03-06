@@ -7,9 +7,10 @@
 //
 
 #import "SIXBaseView.h"
+#import <WebKit/WebKit.h>
 
 @interface SIXForumView : SIXBaseView
 
-@property (nonatomic, weak) UIWebView *webView;
+@property (nonatomic, weak) WKWebView *webView;
 
 @end

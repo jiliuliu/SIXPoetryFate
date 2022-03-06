@@ -24,13 +24,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"罗裳";
     [self configMyView];
     [self addSwipeGestureToPopController];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (SIXSkinModel *)myModel{
@@ -42,7 +38,6 @@
 
 - (void)configMyView {
     self.myView.collectionView.backgroundColor = [UIColor whiteColor];
-    
     self.myView.collectionView.delegate = self;
     self.myView.collectionView.dataSource =self;
 }

@@ -48,10 +48,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    self.navigationController.navigationBar.translucent = YES;
     self.myView.bgImageView.image = [UIImage imageNamed:BACKGROUDIMAGENAME];
     [self.myView.collectionView reloadData];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -67,15 +66,20 @@
 }
 
 - (void)configMyView {
+    self.title = @"风雅颂";
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
+    
     self.myView.collectionView.dataSource = self;
     self.myView.collectionView.delegate = self;
     
     [self.myView.bgImageView addLeavesOffluttering];
-    [self.myView.bgImageView animationRipplingImageView];
 
     UISwipeGestureRecognizer *gesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(SwipeGestureAction)];
     gesture.direction = UISwipeGestureRecognizerDirectionRight|UISwipeGestureRecognizerDirectionLeft;
     [self.myView addGestureRecognizer:gesture];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"回主页" style:(UIBarButtonItemStylePlain) target:self action:@selector(SwipeGestureAction)];
 }
 
 - (void)SwipeGestureAction {
@@ -92,7 +96,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SIXCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
     
-    cell.myLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:25] : [UIFont systemFontOfSize:25];
+    cell.myLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:35] : [UIFont systemFontOfSize:35];
     cell.myLabel.textColor = [UIColor colorOfWordColor];
     cell.myLabel.textAlignment = NSTextAlignmentCenter;
     cell.myLabel.text = self.myModel.datas[indexPath.row];
@@ -105,28 +109,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:{
-            SIXSearchPoetryController *searchC = [SIXSearchPoetryController new];
-            [self.navigationController pushViewController:searchC animated:YES];
-                }
-            break;
-        case 1:{
             SIXLocalSearchController *localSearchC = [SIXLocalSearchController new];
             [self.navigationController pushViewController:localSearchC animated:YES];
-        }
-            break;
-        case 2:{
-            SIXLifeController *lifeC = [SIXLifeController new];
-            [self.navigationController pushViewController:lifeC animated:YES];
-        }
-            break;
-        case 3:{
-            SIXSongListController *songListC = [SIXSongListController new];
-            [self.navigationController pushViewController:songListC animated:YES];
-        }
-            break;
-        case 4:{
-            SIXForumController *forumC = [SIXForumController new];
-            [self.navigationController pushViewController:forumC animated:YES];
         }
             break;
         default:{
@@ -138,25 +122,55 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = ([UIScreen mainScreen].bounds.size.width-30)/2;
+//    CGFloat width = ([UIScreen mainScreen].bounds.size.width-30)/2;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width-130;
     return CGSizeMake(width, width);
 }
 
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(70, 0, 0, 0);
+    return UIEdgeInsetsMake(45, 0, 0, 0);
 }
 
-
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 30;
+}
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+ - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+     switch (indexPath.row) {
+         case 0:{
+             SIXSearchPoetryController *searchC = [SIXSearchPoetryController new];
+             [self.navigationController pushViewController:searchC animated:YES];
+                 }
+             break;
+         case 1:{
+             SIXLocalSearchController *localSearchC = [SIXLocalSearchController new];
+             [self.navigationController pushViewController:localSearchC animated:YES];
+         }
+             break;
+         case 2:{
+             SIXLifeController *lifeC = [SIXLifeController new];
+             [self.navigationController pushViewController:lifeC animated:YES];
+         }
+             break;
+         case 3:{
+             SIXSongListController *songListC = [SIXSongListController new];
+             [self.navigationController pushViewController:songListC animated:YES];
+         }
+             break;
+         case 4:{
+             SIXForumController *forumC = [SIXForumController new];
+             [self.navigationController pushViewController:forumC animated:YES];
+         }
+             break;
+         default:{
+             SIXAPPStyleController *styleC = [SIXAPPStyleController new];
+             [self.navigationController pushViewController:styleC animated:YES];
+         }
+             break;
+     }
+ }
 */
 
 @end

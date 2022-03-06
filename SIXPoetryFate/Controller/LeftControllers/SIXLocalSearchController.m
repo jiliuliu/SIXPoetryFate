@@ -18,8 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"寻觅觅";
     self.myView.searchBar.placeholder = @"请输入完整的诗名、作者";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CGRect frame = self.myView.searchBar.frame;
+    frame.origin.y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
+    self.myView.searchBar.frame = frame;
+    
+    frame = self.myView.tableView.frame;
+    frame.origin.y = CGRectGetMaxY(self.myView.searchBar.frame);
+    frame.size.height = HEIGHT - frame.origin.y;
+    self.myView.tableView.frame = frame;
 }
 
 - (void)didReceiveMemoryWarning {

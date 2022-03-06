@@ -28,8 +28,7 @@
 }
 
 - (void)configUI {
-    [UINavigationBar appearance].hidden = YES;
-
+//    [UINavigationBar appearance].hidden = YES;    
     [[UITableViewCell appearance] setBackgroundColor:[UIColor clearColor]];
     [[UITableView appearance] setSeparatorColor:[UIColor colorFromHexCode:@"9c896f"]];
     
@@ -39,7 +38,7 @@
         [defaults setObject:@"bg2" forKey:@"app背景图片"];
     }
     if (![defaults objectForKey:@"poetry背景图片"]) {
-        [defaults setObject:@"bg13" forKey:@"poetry背景图片"];
+        [defaults setObject:@"bg6" forKey:@"poetry背景图片"];
     }
     
     self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:BACKGROUDIMAGENAME]];

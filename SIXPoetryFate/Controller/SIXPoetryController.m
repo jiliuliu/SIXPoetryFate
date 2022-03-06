@@ -35,6 +35,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = self.myModel.poemTitle;
+
     [self configMyView];
 
     //添加对模型层的监听
@@ -45,8 +47,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.myView.bgImageView.image = [UIImage imageNamed:[[NSUserDefaults standardUserDefaults] objectForKey:@"poetry背景图片"]];
 
     //添加键盘开启  关闭的 观察
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openKeyboard:) name:UIKeyboardWillShowNotification object:nil];
@@ -66,7 +66,6 @@
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,15 +81,37 @@
 }
 
 - (void)configMyView {
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImage *image = [UIImage imageNamed:[[NSUserDefaults standardUserDefaults] objectForKey:@"poetry背景图片"]];
+    self.myView.bgImageView.image = image;
+    self.myView.bgImageView.alpha = 0.5;
+    
+    self.myView.tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
     self.myView.tableView.delegate = self;
     self.myView.tableView.dataSource = self;
     self.myView.textView.delegate = self;
+
+    self.myView.tableView.scrollsToTop = YES;
     self.myView.scrollView.delegate = self;
-    
+
+    self.myView.textView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
     self.myView.textView.textColor = [UIColor colorOfWordColor];
     self.myView.textView.font = MYFONT ? [UIFont fontWithName:MYFONT size:20] : [UIFont systemFontOfSize:20];
     
     self.myView.textView.inputAccessoryView = [self addSIXToolbar];
+    
+    //添加收藏按钮
+    UIButton *collectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [collectBtn setTitle:@"❀" forState:UIControlStateNormal];
+    collectBtn.titleLabel.font = [UIFont systemFontOfSize:25];
+    [collectBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    [collectBtn addTarget:self action:@selector(collectPoetry:) forControlEvents:UIControlEventTouchUpInside];
+    collectBtn.selected = self.myModel.collected;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:collectBtn];
 }
 
 
@@ -125,7 +146,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,26 +167,12 @@
     cell.accessoryView = nil;
     
     if (indexPath.row == 0) {
-        cell.textLabel.text = self.myModel.poemTitle;
-        cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:20] : [UIFont systemFontOfSize:20];
-        
-        //添加收藏按钮
-        UIButton *collectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-        [collectBtn setTitle:@"❀" forState:UIControlStateNormal];
-        collectBtn.titleLabel.font = [UIFont systemFontOfSize:25];
-        [collectBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-        [collectBtn addTarget:self action:@selector(collectPoetry:) forControlEvents:UIControlEventTouchUpInside];
-        collectBtn.selected = self.myModel.collected;
-        cell.accessoryView = collectBtn;
-    }
-    
-    if (indexPath.row == 1) {
         cell.textLabel.text = [NSString stringWithFormat:@"作者：%@", self.myModel.poemAuthor];
         cell.textLabel.font = MYFONT ? [UIFont fontWithName:MYFONT size:18] : [UIFont systemFontOfSize:18];
     }
     
     //诗内容
-    if (indexPath.row == 2) {
+    if (indexPath.row == 1) {
         NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:self.myModel.poemContent];
         
         //调整label显示的行间隔
@@ -180,7 +187,7 @@
     }
     
     //注解
-    if (indexPath.row == 3) {
+    if (indexPath.row == 2) {
         NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:self.myModel.poemDescription];
         
         //调整label显示的行间隔
@@ -206,12 +213,6 @@
     [FMDBManager collectPoetry:self.myModel];
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (self.myView.scrollView.contentOffset.x < -30) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
 #pragma mark - UITextViewDelegate
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
     [self.myView.textView viewWithTag:placeholderLabelTag].hidden = YES;
@@ -234,15 +235,10 @@
     [FMDBManager savePoetryComment:self.myModel];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.myView.scrollView.contentOffset.x < -30) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
-*/
 
 @end

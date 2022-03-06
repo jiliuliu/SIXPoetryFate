@@ -24,9 +24,11 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 54, WIDTH, HEIGHT-54)];
+        //44+52
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT-54)];
         tableView.backgroundColor = [UIColor clearColor];
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        tableView.
         [self.scrollView addSubview:tableView];
         _tableView = tableView;
     }
